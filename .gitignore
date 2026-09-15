@@ -1,31 +1,94 @@
-## Ignore Visual Studio SSDT sqlproj specific temporary files, build results, etc
-##
-##
-## Get latest from https://github.com/github/gitignore/blob/master/SSDT-sqlproj.gitignore
-# Build output
+# -----------------------------------------------------------------------------
+# Arquivos de projeto e solução do SSMS
+# -----------------------------------------------------------------------------
+*.ssmssqlproj
+*.ssmssln
+
+# -----------------------------------------------------------------------------
+# Arquivos de projeto SSDT / SQL Server Database Project (compatibilidade)
+# -----------------------------------------------------------------------------
+*.sqlproj.user
+*.suo
+*.user
+
+# -----------------------------------------------------------------------------
+# Pastas de cache e configurações locais do SSMS / Visual Studio
+# -----------------------------------------------------------------------------
+.vs/
+*.vs/
+.vs/sln/
+.vs/VSWorkspaceState.json
+.vs/*.suo
+.vs/*.cache
+
+# -----------------------------------------------------------------------------
+# Saídas de build e artefatos temporários
+# -----------------------------------------------------------------------------
 bin/
 obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
-# DACPAC files
-*.dacpac
-
-# Publish profiles (optional, if environment-specific)
-*.publish.xml
-
-# SQL Server debug files
+# -----------------------------------------------------------------------------
+# Arquivos de modelo e cache do SQL Server / SSDT
+# -----------------------------------------------------------------------------
 *.dbmdl
-*.sqlcmdvars
+*.dbproj.schemaview
+*.mdf
+*.ldf
+*.ndf
+*.publish.xml
+*.publishstats
+Local*.config
+*.dacpac
+*.bacpac
 
-# Visual Studio settings
-.vs/
+# -----------------------------------------------------------------------------
+# Extensões de SQL Server para VS Code (mssql / SQLTools)
+# -----------------------------------------------------------------------------
+# Configurações locais de conexão e workspace do VS Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/*.code-workspace
+.mssqlconfig
+.sqltoolsconfig
+*.mssql
 
-# User-specific files
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-# Backup files
-*.bak
+# -----------------------------------------------------------------------------
+# Logs, temporários e arquivos de editor
+# -----------------------------------------------------------------------------
 *.log
+*.tmp
+*.temp
+*~
+*.bak
+*.swp
+*.swo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
 
+# -----------------------------------------------------------------------------
+# Arquivos de relatório e execução
+# -----------------------------------------------------------------------------
+*.rpt
+*.plan
+*.xml
+
+# -----------------------------------------------------------------------------
+# Pacotes e dependências
+# -----------------------------------------------------------------------------
+packages/
+node_modules/
+*.nupkg
+*.snupkg
