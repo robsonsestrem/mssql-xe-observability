@@ -1,3 +1,10 @@
 <Solution>
-  <Project Path="xe-diagnostics-collector.sqlproj" Type="42ea0dbd-9cf1-443e-919e-be9c484e4577" />
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Default" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="xe-diagnostics-collector.sqlproj" Type="42ea0dbd-9cf1-443e-919e-be9c484e4577">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
 </Solution>
