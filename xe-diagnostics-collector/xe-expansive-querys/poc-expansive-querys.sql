@@ -6,6 +6,8 @@
               de carga.
     PROJETO: mssql-xe-observability
 
+    AUTHOR: Robson Sestrem
+
     REFERÊNCIAS:
  *  Documentação oficial: CREATE EVENT SESSION, sys.fn_xe_file_target_read_file
  */
