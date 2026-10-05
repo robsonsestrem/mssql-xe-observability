@@ -6,6 +6,8 @@
               de performance por texto de query.
     PROJETO: mssql-xe-observability
 
+    AUTHOR: Robson Sestrem
+
     REFERÊNCIAS:
  *  Documentação oficial: ROW_NUMBER, CTE, GROUP BY, HAVING
  */
