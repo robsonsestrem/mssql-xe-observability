@@ -4,6 +4,8 @@
               executando a procedure sp_load_ddl_statement no banco DBA_PerformanceHub.
     PROJETO: mssql-xe-observability
 
+    AUTHOR: Robson Sestrem
+
     REFERÊNCIAS DE URL:
  *  https://learn.microsoft.com/pt-br/sql/relational-databases/system-stored-procedures/sp-add-job-transact-sql
  *  https://learn.microsoft.com/pt-br/sql/relational-databases/system-stored-procedures/sp-add-jobschedule-transact-sql

@@ -6,12 +6,11 @@
               a cada 30 minutos.
     PROJETO: mssql-xe-observability
 
+    AUTHOR: Robson Sestrem
+
     REFERÊNCIAS:
  *  Documentação oficial: sp_add_job, sp_add_jobstep, sp_add_jobschedule, sp_add_jobserver
  */
--- ============================================================
--- Job: DBA - Collect_Expensive_Queries
--- ============================================================
 USE [msdb]
 GO
 
