@@ -2,6 +2,7 @@
  *
     OBJETIVO: Visualização e análise de relatórios de blocked process report coletados
               por trace, tabela, arquivo XML ou sessão de Extended Events.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Michael J. Swart
@@ -10,9 +11,6 @@
  *  https://michaeljswart.com/2016/02/look-at-blocked-process-reports-collected-with-extended-events/
  *  https://michaeljswart.com/2011/04/a-new-way-to-examine-blocked-process-reports/
  */
--- ============================================================
--- Refatoração estética e documental de sp_blocked_process_report_viewer
--- ============================================================
 USE DBA_PerformanceHub
 GO
 

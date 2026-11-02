@@ -4,6 +4,7 @@
               caras (com duração maior que 10 segundos), executando as procedures
               de carga sp_load_slow_query_statement e sp_load_slow_query_batch_rpc
               a cada 30 minutos.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

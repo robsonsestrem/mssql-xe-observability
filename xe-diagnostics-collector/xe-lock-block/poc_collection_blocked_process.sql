@@ -2,6 +2,7 @@
  *
     OBJETIVO: Configuração de monitoramento de bloqueios (blocked process report) via Extended Events,
               com tabela de histórico e procedure de carga dos eventos coletados.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

@@ -2,6 +2,7 @@
  *
     OBJETIVO: Criação de SQL Agent Job para coleta das principais rotinas DDL da instância,
               executando a procedure sp_load_ddl_statement no banco DBA_PerformanceHub.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

@@ -3,6 +3,7 @@
    OBJETIVO  : Investigar eventos de DDL (CREATE / ALTER / DROP de objetos)
                capturados pela sessão XE collect_ddl_statement e carregados
                pela dbo.sp_load_ddl_statement.
+
    PROJETO: mssql-xe-observability
 
    AUTHOR: Robson Sestrem

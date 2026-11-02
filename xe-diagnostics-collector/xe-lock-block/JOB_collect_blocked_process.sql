@@ -2,6 +2,7 @@
  *
     OBJETIVO: Criação de SQL Agent Job para coleta de histórico detalhado de bloqueios
               com mais de 5 segundos de duração, executando a procedure sp_gather_blocked_process_events.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

@@ -3,6 +3,7 @@
     OBJETIVO: PoC de captura de DDL (Data Definition Language) via Extended Events,
               registrando eventos de object_altered, object_created e object_deleted
               em tabela histórica, com extração de pilha T-SQL e texto das instruções.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

@@ -4,6 +4,7 @@
               (history_slow_query_batch_rpc e history_slow_query_statement),
               incluindo top N por recência, top N por duração e agregações
               de performance por texto de query.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem
