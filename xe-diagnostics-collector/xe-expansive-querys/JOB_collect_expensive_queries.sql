@@ -4,14 +4,14 @@
               caras (com duração maior que 10 segundos), executando as procedures
               de carga sp_load_slow_query_statement e sp_load_slow_query_batch_rpc
               a cada 30 minutos.
+
     PROJETO: mssql-xe-observability
+
+    AUTHOR: Robson Sestrem
 
     REFERÊNCIAS:
  *  Documentação oficial: sp_add_job, sp_add_jobstep, sp_add_jobschedule, sp_add_jobserver
  */
--- ============================================================
--- Job: DBA - Collect_Expensive_Queries
--- ============================================================
 USE [msdb]
 GO
 

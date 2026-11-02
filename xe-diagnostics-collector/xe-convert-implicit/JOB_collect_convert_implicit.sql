@@ -2,7 +2,10 @@
  *
     OBJETIVO: Criação de SQL Agent Job para coleta de consultas com alertas de conversão implícita,
               executando a procedure sp_load_plan_affecting_convert no banco DBA_PerformanceHub.
+
     PROJETO: mssql-xe-observability
+
+    AUTHOR: Robson Sestrem
 
     REFERÊNCIAS DE URL:
  *  https://learn.microsoft.com/pt-br/sql/relational-databases/system-stored-procedures/sp-add-job-transact-sql

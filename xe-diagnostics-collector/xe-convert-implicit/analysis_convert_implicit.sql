@@ -1,14 +1,12 @@
 /* 
- *
-   SCRIPT DE ANÁLISE: dbo.history_plan_affecting_convert
-   
+ *      
    OBJETIVO : Investigar eventos de conversão implícita (plan_affecting_convert)
               coletados por Extended Events e carregados pela
               dbo.sp_load_plan_affecting_convert.
 
-   AUTHOR: Robson Sestrem
-
    PROJETO: mssql-xe-observability
+
+   AUTHOR: Robson Sestrem   
  *   
  */
 USE DBA_PerformanceHub

@@ -2,6 +2,7 @@
  *
     OBJETIVO: Coleta e carga de eventos de conversão implícita (plan_affecting_convert)
               por Extended Events para histórico de diagnóstico de performance.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem

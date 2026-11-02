@@ -4,6 +4,7 @@
               capturando eventos de statement, batch e RPC com duração acima
               de 10 segundos, persistindo em tabelas históricas via procedures
               de carga.
+
     PROJETO: mssql-xe-observability
 
     AUTHOR: Robson Sestrem
@@ -95,7 +96,7 @@ GO
 -- ============================================================
 -- Criação da tabela de histórico de statements caros
 -- ============================================================
-USE MAINTENANCE_DIX
+USE DBA_PerformanceHub
 GO
 
 CREATE TABLE dbo.history_slow_query_statement
@@ -319,7 +320,7 @@ GO
 -- ============================================================
 -- Criação da tabela de histórico de batch/RPC caros
 -- ============================================================
-USE MAINTENANCE_DIX
+USE DBA_PerformanceHub
 GO
 
 CREATE TABLE dbo.history_slow_query_batch_rpc
