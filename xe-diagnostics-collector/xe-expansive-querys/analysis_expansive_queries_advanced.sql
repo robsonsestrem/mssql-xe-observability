@@ -1,11 +1,12 @@
-/* ============================================================================
-   SCRIPTS DE ANÁLISE: history_slow_query_statement + history_slow_query_batch_rpc
-   ----------------------------------------------------------------------------
-   OBJETIVO  : Investigar queries com duração >= 10s capturadas pelas sessões
-               XE expensive_query_statement (sp_statement_completed) e
-               expensive_query_batch_rpc (rpc_completed + sql_batch_completed).
-   BANCO     : DBA_PerformanceHub
-   COMPATIB. : SQL Server 2017+
+/*
+ *
+   OBJETIVO: Investigar queries com duração >= 10s capturadas pelas sessões
+             XE expensive_query_statement (sp_statement_completed) e
+             expensive_query_batch_rpc (rpc_completed + sql_batch_completed).
+
+   PROJETO: mssql-xe-observability
+
+   AUTHOR: Robson Sestrem
    ----------------------------------------------------------------------------
    SUPOSIÇÕES E AVISOS CRÍTICOS:
 
@@ -25,8 +26,8 @@
    3. result INDICA SUCESSO OU FALHA:
       Valores típicos: 'OK', 'Error', 'Abort'. Só existe para
       sql_batch_completed e rpc_completed. NULL para outros casos.
-   ============================================================================ */
-
+ *
+ */
 USE DBA_PerformanceHub
 GO
 
