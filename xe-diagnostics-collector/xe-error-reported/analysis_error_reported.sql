@@ -273,8 +273,7 @@ ORDER BY dia DESC, hora DESC, ocorrencias DESC;
 
 /* ============================================================================
    SEÇÃO 11 — DETALHE CRONOLÓGICO (investigação manual)
-   Últimos erros com todas as colunas relevantes. Note que sql_text
-   provavelmente estará NULL — ver aviso 3 no cabeçalho.
+   Últimos erros com todas as colunas relevantes.
    ============================================================================ */
 SELECT TOP (200)
     e.Dt_Evento
@@ -287,43 +286,8 @@ SELECT TOP (200)
   , e.client_app_name
   , e.session_id
   , e.message
-  , CASE WHEN e.sql_text IS NULL THEN 'NULL (CAST falhou na carga)' ELSE 'XML presente' END AS status_sql_text
+  , CASE WHEN e.sql_text IS NULL THEN 'NULL (CAST falhou na carga)' ELSE 'SQL presente' END AS status_sql_text
 FROM dbo.history_database_error AS e WITH (NOLOCK)
 WHERE e.Dt_Evento >= @DataInicial
   AND e.Dt_Evento <  @DataFinal
 ORDER BY e.Dt_Evento DESC;
-
-/* ============================================================================
-   SEÇÃO 12 — RECUPERAÇÃO DO sql_text DIRETO DO ARQUIVO XE
-   Como a coluna sql_text da tabela está inutilizada, esta seção lê o
-   arquivo .xel diretamente e extrai o texto real do comando.
-   ATENÇÃO: depende de acesso ao caminho do arquivo e da sessão estar ativa.
-   Use para investigar um erro específico, não para análise de volume.
-   ============================================================================ */
-DECLARE @ErrorNumberXE INT = NULL;   -- ex.: 17806
-
-SELECT TOP (100)
-    CAST(DATEADD(HOUR, DATEDIFF(HOUR, GETUTCDATE(), GETDATE()), CAST(x.timestamp_utc AS DATETIME2(3))) AS DATETIME) AS dt_evento
-  , x.event_data.value('(data[@name="error_number"]/value)[1]', 'int')           AS error_number
-  , x.event_data.value('(data[@name="severity"]/value)[1]', 'int')               AS severity
-  , x.event_data.value('(data[@name="state"]/value)[1]', 'int')                  AS [state]
-  , x.event_data.value('(data[@name="message"]/value)[1]', 'nvarchar(max)')      AS mensagem
-  , x.event_data.value('(action[@name="sql_text"]/value)[1]', 'nvarchar(max)')   AS sql_text_real
-  , x.event_data.value('(action[@name="database_name"]/value)[1]', 'nvarchar(128)') AS database_name
-  , x.event_data.value('(action[@name="username"]/value)[1]', 'nvarchar(128)')   AS username
-  , x.event_data.value('(action[@name="client_hostname"]/value)[1]', 'nvarchar(128)') AS client_hostname
-  , x.event_data.value('(action[@name="client_app_name"]/value)[1]', 'nvarchar(128)') AS client_app_name
-  , x.event_data.value('(action[@name="session_id"]/value)[1]', 'int')           AS session_id
-FROM
-(
-    SELECT
-        timestamp_utc
-      , CAST(event_data AS XML) AS event_data
-    FROM sys.fn_xe_file_target_read_file(
-            N'/var/opt/mssql/log_jobs/xe/system_error_collection*.xel',
-            N'/var/opt/mssql/log_jobs/xe/system_error_collection*.xem',
-            NULL, NULL)
-) AS x
-WHERE (@ErrorNumberXE IS NULL
-       OR x.event_data.value('(data[@name="error_number"]/value)[1]', 'int') = @ErrorNumberXE)
-ORDER BY x.timestamp_utc DESC;

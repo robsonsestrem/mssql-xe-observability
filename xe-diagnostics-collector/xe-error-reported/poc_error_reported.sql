@@ -98,7 +98,7 @@ CREATE TABLE dbo.history_database_error
   , [error_number] INT
   , severity INT
   , [state] INT
-  , sql_text XML
+  , sql_text VARCHAR(MAX)
   , [message] VARCHAR(MAX)
 ) WITH(DATA_COMPRESSION = PAGE)
 GO
@@ -170,7 +170,7 @@ BEGIN
           , xed.event_data.value('(data[@name="error_number"]/value)[1]', 'INT') AS [error_number]
           , xed.event_data.value('(data[@name="severity"]/value)[1]', 'INT') AS [severity]
           , xed.event_data.value('(data[@name="state"]/value)[1]', 'INT') AS [state]
-          , TRY_CAST(xed.event_data.value('(action[@name="sql_text"]/value)[1]', 'VARCHAR(MAX)') AS XML) AS [sql_text]
+          , xed.event_data.value('(action[@name="sql_text"]/value)[1]', 'VARCHAR(MAX)') AS [sql_text]
           , xed.event_data.value('(data[@name="message"]/value)[1]', 'VARCHAR(MAX)') AS [message]
         FROM #Eventos AS A
         CROSS APPLY A.event_data.nodes('//event') AS xed (event_data)
