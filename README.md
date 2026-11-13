@@ -52,6 +52,7 @@ Em vez de "monitorar tudo", o repositório adota uma abordagem **orientada a sin
 
 ## 🧱 Estrutura e Organização
 
+```
 mssql-xe-observability/
 ├── xe-diagnostics-collector/          # Projeto SQL (SSDT / Microsoft.Build.Sql)
 │   ├── xe-diagnostics-collector.sqlproj
@@ -75,7 +76,7 @@ mssql-xe-observability/
 ├── .gitignore
 ├── LICENSE                            # MIT
 └── README.md
-
+```
 
 ### Convenção de nomes dentro de cada pasta
 
