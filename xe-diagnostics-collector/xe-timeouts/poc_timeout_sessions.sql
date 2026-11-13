@@ -154,7 +154,7 @@ BEGIN
 
 
             -- Extração dos atributos do XML e inserção no histórico
-            INSERT INTO dbo.[History_Timeout]
+            INSERT INTO dbo.[history_timeout]
             SELECT
                 A.timestamp_utc
                 , xed.event_data.value('(action[@name="session_id"]/value)[1]', 'int') AS [session_id]
